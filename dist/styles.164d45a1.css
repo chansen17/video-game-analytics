@@ -36,11 +36,11 @@ h1, h2, h3, h4, h5, h6 {
 .grid-container {
   display: grid;
   gap: 3rem 1rem;
-  grid-template-areas: "Header Header Header Header Header" "featured-one featured-one featured-two featured-two admin-panel" "main-content main-content main-content main-content admin-panel";
+  grid-template-areas: "header header header header header" "featured-one featured-one featured-two featured-two admin-panel" "main-content main-content main-content main-content admin-panel";
 }
 
 .header {
-  grid-area: Header;
+  grid-area: header;
 }
 
 .featured-one {
@@ -59,6 +59,13 @@ h1, h2, h3, h4, h5, h6 {
   grid-area: main-content;
 }
 
+@media screen and (max-width: 960px) {
+  .grid-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
 .grid-container .header {
   width: 100%;
   display: flex;
@@ -88,6 +95,14 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.4rem 0.55rem;
   border-radius: 11px;
   font-size: 0.9rem;
+  transition: 0.2s all ease-in-out;
+}
+.grid-container .header .search-bell-portrait .bell:hover,
+.grid-container .header .search-bell-portrait .glass:hover {
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
+  transform: translateY(-2px);
+  box-shadow: 1px 3px 7px #c28771;
 }
 .grid-container .header .search-bell-portrait .bell {
   font-size: 1rem;
@@ -100,6 +115,13 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
   object-fit: cover;
   align-items: center;
+  transition: 0.2s all ease-in-out;
+}
+.grid-container .header .search-bell-portrait #portrait:hover {
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
+  transform: translateY(-2px);
+  box-shadow: 1px 3px 7px #c28771;
 }
 .grid-container .card {
   height: 100%;
@@ -110,6 +132,12 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   align-items: flex-start;
+  transition: 0.2s all ease-in-out;
+}
+.grid-container .card:hover {
+  transition: 0.2s all ease-in-out;
+  transform: translateY(-2px);
+  cursor: pointer;
 }
 .grid-container .card .mid {
   margin-top: 1rem;
@@ -158,9 +186,15 @@ h1, h2, h3, h4, h5, h6 {
   background: #5843BE;
   box-shadow: 1px 3px 10px #5843BE;
 }
+.grid-container .featured-one .card:hover {
+  box-shadow: 3px 6px 20px #5843BE;
+}
 .grid-container .featured-two .card {
   background: #F8A067;
   box-shadow: 1px 3px 10px #F8A067;
+}
+.grid-container .featured-two .card:hover {
+  box-shadow: 3px 6px 20px #F8A067;
 }
 .grid-container .admin-panel {
   display: flex;
@@ -173,8 +207,22 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1rem;
   box-shadow: 1px 3px 10px #d0d0d0;
 }
+@media screen and (max-width: 960px) {
+  .grid-container .admin-panel {
+    width: 100%;
+  }
+}
 .grid-container .admin-panel .input-container {
   margin: 0.75rem 0;
+}
+@media screen and (max-width: 960px) {
+  .grid-container .admin-panel .input-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .grid-container .admin-panel .input-container label {
   color: #222;
@@ -189,6 +237,13 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+@media screen and (max-width: 960px) {
+  .grid-container .admin-panel .admin-list {
+    display: flex;
+    max-width: 100%;
+    align-items: center;
+  }
 }
 .grid-container .admin-panel .admin-list li {
   margin: 0.3rem 0;
@@ -274,6 +329,15 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 15px;
   letter-spacing: 1px;
   text-transform: uppercase;
+  transition: 0.2s all ease-in-out;
+  box-shadow: 1px 2px 7px #6e58db;
+}
+.grid-container .admin-panel .timeline-container button:hover {
+  cursor: pointer;
+  background: #6e58db;
+  transition: 0.2s all ease-in-out;
+  box-shadow: 3px 6px 12px #6e58db;
+  transform: translateY(-2px);
 }
 .grid-container .main-content {
   height: 300px;
@@ -294,9 +358,17 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 20px;
   padding: 1rem;
   box-shadow: 3px 6px 20px #ebdfcb;
+  transition: 0.2s all ease-in-out;
+}
+.grid-container .main-content .big-card:hover {
+  transition: 0.2s all ease-in-out;
+  transform: translateY(-2px);
+  cursor: pointer;
+  box-shadow: 6px 10px 30px #ebdfcb;
 }
 .grid-container .main-content .graph-container {
   height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -309,7 +381,8 @@ h1, h2, h3, h4, h5, h6 {
   background: #5843be;
 }
 .grid-container .main-content .graph-container .bar-col {
-  width: 25px;
+  min-width: 15px;
+  max-width: 100%;
   border-radius: 15px;
   position: relative;
   font-size: 0.85rem;
@@ -317,6 +390,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .grid-container .main-content .graph-container .bar-col:nth-child(even) {
   margin-right: 2rem;
+}
+@media screen and (max-width: 960px) {
+  .grid-container .main-content .graph-container .bar-col:nth-child(even) {
+    margin-right: 0rem;
+  }
 }
 .grid-container .main-content .graph-container .bar-col:nth-child(even)::after {
   content: "20.04";
