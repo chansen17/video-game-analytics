@@ -1,0 +1,364 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+
+body {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FEF3DD;
+  font-size: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+#dashboard {
+  height: auto;
+  width: 100%;
+  max-width: 1100px;
+  color: #222;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 30px;
+  box-shadow: 0 20px 50px #e6945d63;
+}
+
+.grid-container {
+  display: grid;
+  gap: 3rem 1rem;
+  grid-template-areas: "Header Header Header Header Header" "featured-one featured-one featured-two featured-two admin-panel" "main-content main-content main-content main-content admin-panel";
+}
+
+.header {
+  grid-area: Header;
+}
+
+.featured-one {
+  grid-area: featured-one;
+}
+
+.featured-two {
+  grid-area: featured-two;
+}
+
+.admin-panel {
+  grid-area: admin-panel;
+}
+
+.main-content {
+  grid-area: main-content;
+}
+
+.grid-container .header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.grid-container .header .title-container .main-title {
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+.grid-container .header .title-container .sub-title {
+  font-size: 0.8rem;
+  color: rgba(159, 159, 159, 0.678);
+  font-weight: 600;
+}
+.grid-container .header .search-bell-portrait {
+  display: flex;
+  align-items: center;
+}
+.grid-container .header .search-bell-portrait .bell,
+.grid-container .header .search-bell-portrait .glass {
+  margin: 0 0.35rem;
+  color: #ed8965;
+  background: #f2d0b9;
+  padding: 0.4rem 0.55rem;
+  border-radius: 11px;
+  font-size: 0.9rem;
+}
+.grid-container .header .search-bell-portrait .bell {
+  font-size: 1rem;
+}
+.grid-container .header .search-bell-portrait #portrait {
+  margin-left: 4rem;
+  height: 40px;
+  width: 40px;
+  background: palevioletred;
+  border-radius: 50%;
+  object-fit: cover;
+  align-items: center;
+}
+.grid-container .card {
+  height: 100%;
+  border-radius: 20px;
+  padding: 1rem;
+  color: #eee;
+  height: 200px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: flex-start;
+}
+.grid-container .card .mid {
+  margin-top: 1rem;
+}
+.grid-container .card .mid h4 {
+  margin-bottom: 3rem;
+}
+.grid-container .card .mid p {
+  margin: 0.75rem 0;
+  font-size: 0.75rem;
+  color: rgba(238, 238, 238, 0.623);
+}
+.grid-container .card .mid p span {
+  margin-left: 0.5rem;
+  font-weight: 1.25rem;
+  color: #eee;
+  font-weight: 700;
+}
+.grid-container .card .right {
+  margin-top: 1rem;
+  text-align: center;
+}
+.grid-container .card .right h1 {
+  font-weight: 800;
+}
+.grid-container .card .right h4 {
+  font-size: 0.75rem;
+  font-weight: 100;
+  color: rgba(238, 238, 238, 0.721);
+}
+.grid-container .card .team-logo {
+  max-width: 150px;
+  height: auto;
+}
+.grid-container .featured-one {
+  position: relative;
+}
+.grid-container .featured-one .featured-title {
+  color: #444;
+  font-size: 0.95rem;
+  position: absolute;
+  top: -30px;
+  left: 0;
+}
+.grid-container .featured-one .card {
+  background: #5843BE;
+  box-shadow: 1px 3px 10px #5843BE;
+}
+.grid-container .featured-two .card {
+  background: #F8A067;
+  box-shadow: 1px 3px 10px #F8A067;
+}
+.grid-container .admin-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ebebeb;
+  border-radius: 15px;
+  width: 200px;
+  max-width: 100%;
+  padding: 1rem;
+  box-shadow: 1px 3px 10px #d0d0d0;
+}
+.grid-container .admin-panel .input-container {
+  margin: 0.75rem 0;
+}
+.grid-container .admin-panel .input-container label {
+  color: #222;
+}
+.grid-container .admin-panel .input-container input {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 12px;
+}
+.grid-container .admin-panel .admin-list {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.grid-container .admin-panel .admin-list li {
+  margin: 0.3rem 0;
+}
+.grid-container .admin-panel .admin-list h4 {
+  font-weight: 100;
+}
+.grid-container .admin-panel .timeline-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.grid-container .admin-panel .timeline-container h4 {
+  margin: 1rem 0;
+}
+.grid-container .admin-panel .timeline-container .time-line {
+  width: 100%;
+  height: 2px;
+  background: #ccc;
+  margin: 2rem 0;
+  position: relative;
+}
+.grid-container .admin-panel .timeline-container .time-line .circle-1 {
+  position: absolute;
+  top: -7px;
+  right: -2px;
+  font-size: 1rem;
+  z-index: 9;
+  color: orange;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.grid-container .admin-panel .timeline-container .time-line .circle-1::before {
+  content: "2019";
+  position: absolute;
+  top: -25px;
+  right: 0;
+  background: #fff;
+  color: #111;
+  font-size: 0.55rem;
+  padding: 0.25rem;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px #ccc;
+}
+.grid-container .admin-panel .timeline-container .time-line .circle-2 {
+  position: absolute;
+  top: -7px;
+  right: 88px;
+  font-size: 1rem;
+  z-index: 9;
+  color: orange;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.grid-container .admin-panel .timeline-container .time-line .circle-2::before {
+  content: "2015";
+  position: absolute;
+  top: -25px;
+  right: 0;
+  background: #fff;
+  color: #111;
+  font-size: 0.55rem;
+  padding: 0.25rem;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px #ccc;
+}
+.grid-container .admin-panel .timeline-container .time-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 60%;
+  background-color: orange;
+}
+.grid-container .admin-panel .timeline-container button {
+  width: 100%;
+  font-size: 0.9rem;
+  margin: 1rem 0;
+  height: 45px;
+  color: #fff;
+  background: #5843BE;
+  border-radius: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.grid-container .main-content {
+  height: 300px;
+  border-radius: 15px;
+  position: relative;
+}
+.grid-container .main-content .main-content-title {
+  position: absolute;
+  top: -30px;
+  font-size: 0.95rem;
+  left: 0;
+  color: #444;
+}
+.grid-container .main-content .big-card {
+  background: #ebdfcb;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 3px 6px 20px #ebdfcb;
+}
+.grid-container .main-content .graph-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 1rem;
+}
+.grid-container .main-content .graph-container .orange {
+  background: #F8A067;
+}
+.grid-container .main-content .graph-container .purple {
+  background: #5843be;
+}
+.grid-container .main-content .graph-container .bar-col {
+  width: 25px;
+  border-radius: 15px;
+  position: relative;
+  font-size: 0.85rem;
+  color: #777;
+}
+.grid-container .main-content .graph-container .bar-col:nth-child(even) {
+  margin-right: 2rem;
+}
+.grid-container .main-content .graph-container .bar-col:nth-child(even)::after {
+  content: "20.04";
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+}
+.grid-container .main-content .graph-container .bar-col:nth-child(1) {
+  height: 20%;
+}
+.grid-container .main-content .graph-container .bar-col:nth-child(2) {
+  height: 35%;
+}
+.grid-container .main-content .graph-container .bar-col:nth-child(3) {
+  height: 60%;
+}
+.grid-container .main-content .graph-container .bar-col:nth-child(4) {
+  height: 40%;
+}
+.grid-container .main-content .graph-container .bar-col:nth-child(5) {
+  height: 80%;
+}
+.grid-container .main-content .graph-container .bar-col:nth-child(6) {
+  height: 40%;
+}
+.grid-container .main-content .graph-container .bar-col:nth-child(7) {
+  height: 40%;
+}
+.grid-container .main-content .graph-container .bar-col:nth-child(8) {
+  height: 40%;
+}
+.grid-container .main-content .graph-container .bar-col:nth-child(9) {
+  height: 60%;
+}
+.grid-container .main-content .graph-container .bar-col:nth-child(10) {
+  height: 40%;
+}
+.grid-container .main-content .graph-container .bar-col:nth-child(11) {
+  height: 60%;
+}
+.grid-container .main-content .graph-container .bar-col:nth-child(12) {
+  height: 90%;
+}
+
+/*# sourceMappingURL=/styles.164d45a1.css.map */
